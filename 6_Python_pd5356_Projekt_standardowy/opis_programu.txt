@@ -1,0 +1,100 @@
+Opis programu
+
+Program działa jako analizator sekwencji DNA. Odczytuje sekwencje z pliku, sprawdza ich poprawność, oblicza podstawowe parametry biologiczne i tworzy wykresy.
+
+1. Wczytywanie pliku
+
+Na początku program otwiera plik o nazwie „sekwencje.txt”. W pliku znajdują się sekwencje DNA zapisane w formacie FASTA. Każda sekwencja ma swoją nazwę zaczynającą się od znaku „>”.
+
+Program odczytuje wszystkie nazwy i odpowiadające im sekwencje DNA.
+
+2. Sprawdzanie poprawności sekwencji
+
+DNA powinno składać się tylko z czterech nukleotydów:
+
+A – adenina
+
+T – tymina
+
+C – cytozyna
+
+G – guanina
+
+Program sprawdza każdą sekwencję. Jeżeli znajdzie inny znak, na przykład X lub U, uznaje taką sekwencję za błędną.
+
+3. Dodawanie sekwencji użytkownika
+
+Program pyta użytkownika o własną sekwencję DNA.
+
+Jeżeli użytkownik wpisze sekwencję, zostaje ona:
+
+* dodana do programu,
+* dopisana do pliku sekwencje.txt,
+* uwzględniona w dalszej analizie.
+
+4. Usuwanie błędnych danych
+
+Program usuwa:
+
+* sekwencje zawierające niepoprawne znaki,
+* sekwencje dłuższe niż 200 nukleotydów,
+* duplikaty, czyli identyczne sekwencje występujące więcej niż jeden raz.
+
+Dzięki temu dalsza analiza wykonywana jest tylko na poprawnych danych.
+
+5. Obliczanie parametrów biologicznych
+
+Dla każdej poprawnej sekwencji program oblicza:
+
+* długość sekwencji,
+* liczbę nukleotydów A,
+* liczbę nukleotydów T,
+* liczbę nukleotydów C,
+* liczbę nukleotydów G,
+* procentową zawartość GC.
+
+Zawartość GC pokazuje, jaki procent wszystkich znaków stanowią nukleotydy G i C.
+
+6. Tworzenie słownika
+
+Program zapisuje wszystkie sekwencje w słowniku języka Python.
+
+Słownik działa podobnie do książki telefonicznej:
+
+* nazwa sekwencji jest kluczem,
+* sekwencja DNA jest wartością.
+
+7. Tworzenie DataFrame
+
+Następnie dane są zamieniane na obiekt DataFrame z biblioteki Pandas.
+
+DataFrame przypomina tabelę w Excelu.
+
+Każdy wiersz zawiera jedną sekwencję, a każda kolumna przechowuje obliczone parametry.
+
+8. Wyświetlanie wyników
+
+Gotowa tabela jest wyświetlana na ekranie terminala.
+
+Dzięki temu użytkownik może zobaczyć wszystkie sekwencje i ich parametry.
+
+9. Tworzenie wykresów
+
+Program tworzy trzy wykresy:
+
+* wykres długości sekwencji,
+* wykres zawartości GC,
+* wykres zależności długości sekwencji od zawartości GC.
+
+Wykresy są zapisywane jako pliki PNG.
+
+10. Obsługa błędów
+
+Jeżeli plik sekwencje.txt nie istnieje, program wyświetla odpowiedni komunikat o błędzie zamiast zakończyć działanie w niekontrolowany sposób.
+
+Program potrafi również wykrywać błędne sekwencje zawierające niedozwolone znaki, usuwać duplikaty oraz pomijać puste sekwencje, 
+dzięki czemu dalsza analiza wykonywana jest wyłącznie na poprawnych danych.
+
+Podsumowanie
+
+Program automatycznie analizuje sekwencje DNA, usuwa błędne dane, oblicza podstawowe parametry biologiczne, prezentuje wyniki w tabeli oraz tworzy wykresy pomagające zrozumieć otrzymane dane.
